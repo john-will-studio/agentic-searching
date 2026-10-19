@@ -558,7 +558,7 @@ class ImportReview(_Dialog):
                     detail = (f"in {geo.country_name(found)}, not {geo.country_name(code)} ({code})" if found else
                               "at sea: not inside any country")
                 return place, "⚠ " + detail + ("\n" + precision if precision else "")
-            country = "Country agrees with the bundled map"
+            country = "✓ Country agrees with map"  # short: only the exceptions should stand out
         else:
             country = "· country to choose when reviewing"
         if precision:
@@ -580,7 +580,7 @@ class ImportReview(_Dialog):
             _place, problem = self.place_from(r)
             style = ("Danger.TLabel" if problem.startswith("✕") else "Warn.TLabel" if problem.startswith("⚠")
                      else "Ok.TLabel" if not problem else "Small.TLabel")
-            r["status"].configure(text=problem or "Country agrees with the bundled map", style=style)
+            r["status"].configure(text=problem or "✓ Country agrees with map", style=style)
             evidence = geo.evidence_text(_place or r["original"])
             if _place and problem.startswith("⚠"):
                 try:

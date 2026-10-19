@@ -459,9 +459,9 @@ class App(tk.Tk):
         now = shown_time(utc_now())
         if failing:
             self._last_state = None  # retry on the next poll even if no file changes
-            self.refresh_label.configure(text=f"Refresh incomplete at {now:%H:%M:%S} {zone_label(now)}")
+            self.refresh_label.configure(text=f"Refresh incomplete {now:%H:%M} {zone_label(now)}")
         else:
-            self.refresh_label.configure(text=f"Live · updated {now:%H:%M:%S} {zone_label(now)}")
+            self.refresh_label.configure(text=f"Updated {now:%H:%M} {zone_label(now)}")  # short: fits at 1024 px
 
     def _snapshot(self):
         p = self.paths

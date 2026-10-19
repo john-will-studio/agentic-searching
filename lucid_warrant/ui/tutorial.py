@@ -16,6 +16,7 @@ from . import msg as messagebox
 from .. import org_config
 from ..signing import MIN_PASSPHRASE_LENGTH, keys_exist
 from . import theme
+from .widgets import autohide_scrollbar
 from .geometry import frame_insets, work_area
 
 # Each page: (title, text, where to point: None, a tab attribute on the app, or ("compose", section)).
@@ -181,12 +182,12 @@ class Tutorial(tk.Toplevel):
         self.reading.pack(fill="x")
         self.reading.pack_propagate(False)
         self.scrollbar = ttk.Scrollbar(self.reading, orient="vertical")
-        self.scrollbar.pack(side="right", fill="y")
         self.text = tk.Text(self.reading, font="LW.Tutorial", wrap="word", width=1, height=1,
                             spacing1=2, spacing2=4, spacing3=8, padx=0, pady=0,
                             **theme.text_widget_colors())
-        self.text.configure(highlightthickness=0, yscrollcommand=self.scrollbar.set, state="disabled")
         self.text.pack(side="left", fill="both", expand=True)
+        self.text.configure(highlightthickness=0, state="disabled",
+                            yscrollcommand=autohide_scrollbar(self.scrollbar, self.text))  # shown only when needed
         self.scrollbar.configure(command=self.text.yview)
         self.extra = ttk.Frame(frame, style="Tutorial.TFrame")
         self.extra.pack(anchor="w", fill="x", pady=(12, 0))

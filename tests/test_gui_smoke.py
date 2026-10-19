@@ -1976,7 +1976,7 @@ def test_import_review_rows_can_be_completed(gui):
     review.rows[0]["country"].set(places_panel.choice_for(review.choices, "TR"))
     review.rows[2]["country"].set(places_panel.choice_for(review.choices, "TR"))
     statuses = [r["status"].cget("text") for r in review.rows]
-    assert statuses[0] == "Country agrees with the bundled map" and "country to choose" in statuses[1] and statuses[2] == "⚠ at sea: not inside any country"
+    assert statuses[0] == "✓ Country agrees with map" and "country to choose" in statuses[1] and statuses[2] == "⚠ at sea: not inside any country"
     assert str(review.ok.cget("state")) == "normal" and review.ok.cget("text") == "Import 3 places"
     review.rows[2]["include"].set(False)
     review._ok()
@@ -2430,7 +2430,7 @@ def test_round9_import_precision_survives_confirmation_and_signing(gui, tmp_path
     assert "uncertainty" in row["status"].cget("text")
     assert "35TPF6641" in row["evidence"].cget("text") and "1000 m square" in row["evidence"].cget("text")
     assert row["evidence"].winfo_ismapped()
-    assert "Country agrees with the bundled map" in row["status"].cget("text")
+    assert "Country agrees with map" in row["status"].cget("text")
     row["country"].set(places_panel.choice_for(review.choices, "GR"))
     assert "in Turkey, not Greece (GR)" in row["status"].cget("text") and "uncertainty" in row["status"].cget("text")
     row["country"].set(places_panel.choice_for(review.choices, "TR"))
@@ -2763,7 +2763,7 @@ def test_import_review_fits_small_window_with_complete_warnings(gui):
     assert "it's in Greece" in row["evidence"].cget("text")
     row["country"].set(choice_for(review.choices, "GR"))
     gui.pump()
-    assert row["status"].cget("text") == "Country agrees with the bundled map"
+    assert row["status"].cget("text") == "✓ Country agrees with map"
     assert "isn't inside Turkey" not in row["evidence"].cget("text")
     # A long duplicate warning also stays intact, rather than losing the distinguishing end of a label.
     first = review.rows[0]
@@ -3269,3 +3269,32 @@ def test_pattern_proposal_is_reviewable_despite_existing_exact_approval(gui, pat
     tree = gui.app.compose.tree
     row = next(i for i in tree.get_children() if tree.set(i, "literal") == "PROJECT*")
     assert tree.set(row, "matching").startswith("Pattern:") and tree.set(row, "status") == "● Pending"
+
+
+def test_scrollbars_appear_only_when_needed_and_limits_fit_at_1024(gui):
+    """Windows report (#10, #12, #14): a scrollbar beside text that fits; the hourly total cut off at 1024 px."""
+    from lucid_warrant.ui.widgets import MessageDialog
+
+    app = gui.app
+    short = MessageDialog(app, "Title", "One line.", kind="info", buttons="ok")
+    short.place_on_screen()  # what run() does before it waits for an answer
+    gui.pump(0.3)
+    assert not short.page.bar.winfo_ismapped(), "nothing to scroll: no scrollbar"
+    short.destroy()
+    long = MessageDialog(app, "Title", "\n".join(f"Line {i} of a long message." for i in range(120)), kind="info",
+                         buttons="ok")
+    long.place_on_screen()
+    gui.pump(0.3)
+    assert long.page.bar.winfo_ismapped(), "a long message scrolls"
+    long.destroy()
+    app.geometry("1024x680")
+    gui.pump(0.5)
+    c = app.compose
+    c.rows.set("20000")
+    c.rate.set("60")
+    c.update_footer()
+    gui.pump(0.2)
+    right = c.page.canvas.winfo_rootx() + c.page.canvas.winfo_width()
+    label = c.limits_effect
+    assert label.cget("text") and label.winfo_rootx() + label.winfo_reqwidth() <= right, "the total fits on the page"
+    assert app.refresh_label.cget("text").startswith("Updated "), "the short clock"

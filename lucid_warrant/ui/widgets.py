@@ -142,6 +142,31 @@ def on_resize(widget: tk.Misc, callback, add: str | None = "+") -> None:
 READ_WIDTH = 960  # maximum readable width for explanatory prose; tables remain fluid
 
 
+def autohide_scrollbar(bar: ttk.Scrollbar, content: tk.Misc):
+    """A yscrollcommand that shows `bar` (to the right of `content`) only when there's something to scroll: a
+    scrollbar beside text that fits looked broken. The bar sits in a fixed-width slot that never leaves the
+    layout; only the bar inside it comes and goes. (Packing and unpacking the bar itself changed the layout, a
+    dialog sized to its content then flipped between needing and not needing it, and the window froze.)"""
+    slot = tk.Frame(bar.master, width=bar.winfo_reqwidth(), bd=0, highlightthickness=0, bg=theme.PALETTE["bg"])
+    slot.pack(side="right", fill="y", before=content)
+    slot.pack_propagate(False)
+    state = {"shown": False}
+
+    def set_view(first, last):
+        bar.set(first, last)
+        needed = float(first) > 0.001 or float(last) < 0.999
+        if needed == state["shown"]:
+            return
+        state["shown"] = needed
+        if needed:
+            bar.place(in_=slot, relx=0, rely=0, relwidth=1, relheight=1)
+            bar.lift(slot)
+        else:
+            bar.place_forget()
+
+    return set_view
+
+
 def responsive_wrap(frame, labels, padding=0):
     """One resize owner per label, capped by both its container and readable width."""
     labels = [label for label in labels if not getattr(label, "_responsive_wrap", False)]
@@ -261,9 +286,8 @@ class ScrollableFrame(ttk.Frame):
         # One scroll unit = one pixel, so trackpad deltas map directly.
         self.canvas = tk.Canvas(self, highlightthickness=0, bd=0, bg=theme.PALETTE["bg"], yscrollincrement=1)
         self.bar = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
-        self.canvas.configure(yscrollcommand=self.bar.set)
-        self.bar.pack(side="right", fill="y")
         self.canvas.pack(side="left", fill="both", expand=True)
+        self.canvas.configure(yscrollcommand=autohide_scrollbar(self.bar, self.canvas))  # shown only when needed
         self.body = ttk.Frame(self.canvas)
         window = self.canvas.create_window(0, 0, window=self.body, anchor="nw")
         on_resize(self.body, lambda _e: self.canvas.configure(scrollregion=self.canvas.bbox("all")), add=None)

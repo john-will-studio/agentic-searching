@@ -300,15 +300,18 @@ class ComposeTab(ttk.Frame):
         ttk.Label(rows, text=f"1 to {MAX_ROWS:,} · per search, not a total across searches", style="Muted.TLabel").pack(side="left", padx=10)
 
         ttk.Label(limits, text="Max searches per hour").grid(row=2, column=0, sticky="w", pady=4)
-        rate = ttk.Frame(limits)
-        rate.grid(row=2, column=1, sticky="w", padx=12)
+        cell = ttk.Frame(limits)
+        cell.grid(row=2, column=1, sticky="w", padx=12)
+        rate = ttk.Frame(cell)
+        rate.pack(anchor="w")
         self.rate = tk.StringVar()
         ttk.Spinbox(rate, from_=1, to=MAX_QUERIES_PER_HOUR, increment=5, textvariable=self.rate, width=10).pack(side="left")
         ttk.Label(rate, text=f"1 to {MAX_QUERIES_PER_HOUR:,} · searches the agent may send in any rolling hour",
                   style="Muted.TLabel").pack(side="left", padx=10)
-        # What the two limits allow together, so a per-search cap isn't mistaken for a total.
-        self.limits_effect = ttk.Label(limits, style="Strong.TLabel")
-        self.limits_effect.grid(row=2, column=2, sticky="w")
+        # What the two limits allow together, so a per-search cap isn't mistaken for a total. On its own line under
+        # the hourly limit: beside it, it ran off the page at 1024 px.
+        self.limits_effect = ttk.Label(cell, style="Strong.TLabel")
+        self.limits_effect.pack(anchor="w", pady=(4, 0))
 
         ttk.Label(limits, text="Search window").grid(row=3, column=0, sticky="nw", pady=4)
         window = ttk.Frame(limits)
