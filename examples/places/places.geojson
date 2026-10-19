@@ -1,0 +1,178 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.005974,
+          40.712776
+        ]
+      },
+      "properties": {
+        "name": "New York office",
+        "radius_m": 100,
+        "iso_a2": "US",
+        "description": "Kickoff meeting held at the client's New York office"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.05888,
+          42.360082
+        ]
+      },
+      "properties": {
+        "name": "Boston steering committee",
+        "radius_m": 250,
+        "iso_a2": "US",
+        "description": "Steering committee venue"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.127758,
+          51.507351
+        ]
+      },
+      "properties": {
+        "name": "London desk",
+        "radius_m": 100,
+        "iso_a2": "GB",
+        "description": "Budget memo drafted at the London desk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9784,
+          41.0082
+        ]
+      },
+      "properties": {
+        "name": "Istanbul office",
+        "radius_m": 100,
+        "iso_a2": "TR",
+        "description": "Client's registered office in Türkiye"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8597,
+          39.9334
+        ]
+      },
+      "properties": {
+        "name": "Ankara branch",
+        "radius_m": 500,
+        "iso_a2": "TR",
+        "description": "Regional branch handling deliveries"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.2075,
+          34.5553
+        ]
+      },
+      "properties": {
+        "name": "Kabul compound",
+        "radius_m": 200,
+        "iso_a2": "AF",
+        "description": "Field site named in the purpose"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.405,
+          52.52
+        ]
+      },
+      "properties": {
+        "name": "Berlin supplier",
+        "radius_m": 100,
+        "iso_a2": "DE",
+        "description": "Supplier HQ (Germany is excluded by default: approval should be refused)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9444,
+          40.6401
+        ]
+      },
+      "properties": {
+        "name": "Thessaloniki port (mislabelled)",
+        "radius_m": 300,
+        "iso_a2": "TR",
+        "description": "Labelled Türkiye but in Greece: the border check should refuse it"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.0,
+          34.0
+        ]
+      },
+      "properties": {
+        "name": "Offshore platform",
+        "radius_m": 1000,
+        "iso_a2": "TR",
+        "description": "At sea: not inside any country"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              28.95,
+              41.0
+            ],
+            [
+              29.0,
+              41.0
+            ],
+            [
+              29.0,
+              41.03
+            ],
+            [
+              28.95,
+              41.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Istanbul district (an area: skipped)"
+      }
+    }
+  ]
+}

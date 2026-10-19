@@ -1,0 +1,6 @@
+{
+  "purpose": "Find records linking PROJECT_CEDAR and SUPPLIER_NORTH (or its alias) for case DEMO-42, excluding test data.",
+  "terms": [
+    {"literal": "CEDAR_PHASE_TWO", "reason": "Seen in an invoice title; may be a sub-project name."}
+  ]
+}

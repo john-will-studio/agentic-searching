@@ -1,0 +1,115 @@
+{
+  "_comment": "Example organization file. Copy to <data>/organization.json (or point LUCID_WARRANT_ORG_CONFIG at it), edit, then run: lucid-warrant config validate. Keys you leave out use the built-in defaults.",
+  "schema_version": 1,
+  "organization": {
+    "id": "acme-bd",
+    "name": "Acme Business Development",
+    "revision": 1
+  },
+  "parameters": {
+    "parameter_1": {
+      "label": "Case authorization",
+      "description": "Authorization identifier checked by the entitlement service."
+    },
+    "parameter_2": {
+      "label": "Data visibility",
+      "description": "Visibility attributes checked by the entitlement service."
+    }
+  },
+  "terms": {
+    "warrant": {
+      "singular": "Warrant",
+      "plural": "Warrants"
+    },
+    "hit_term": {
+      "singular": "Hit term",
+      "plural": "Hit terms"
+    },
+    "template": {
+      "singular": "Template",
+      "plural": "Templates"
+    },
+    "syntax_request": {
+      "singular": "Syntax request",
+      "plural": "Syntax requests"
+    },
+    "run": {
+      "singular": "Run",
+      "plural": "Runs"
+    }
+  },
+  "source_labels": {
+    "script": "Script nomination",
+    "agent": "Agent proposal",
+    "human": "Analyst",
+    "human-edited": "Analyst-edited nomination"
+  },
+  "query_fields": {
+    "content": "content",
+    "date": "timestamp",
+    "country": "country"
+  },
+  "defaults": {
+    "expiry_minutes": 120,
+    "max_rows_per_run": 20000,
+    "max_queries_per_hour": 60,
+    "lookback_days": 30,
+    "blocked_ranges": []
+  },
+  "country_scope": {
+    "mode": "include",
+    "include": [
+      "CA",
+      "GB",
+      "US"
+    ],
+    "exclude": [
+      {
+        "code": "DE",
+        "reason": "GDPR"
+      },
+      {
+        "code": "FR",
+        "reason": "GDPR"
+      },
+      {
+        "code": "IT",
+        "reason": "GDPR"
+      }
+    ],
+    "reason_label": "Reason",
+    "default_reason": "GDPR"
+  },
+  "certification": {
+    "purpose": "I certify that I have reviewed and validated the approved hit terms for compliance. The narrative above meets my organization's business needs and intent.",
+    "limits": "I certify that these limits and constraints are appropriately defined, narrowly tailored to the organization's legitimate business needs, and consistent with applicable company policies, legal requirements, and precedent."
+  },
+  "ui": {
+    "theme_mode": "system",
+    "scheme": "acme",
+    "schemes": {
+      "acme": {
+        "label": "Acme red",
+        "color": "#a4161a",
+        "light": {
+          "accent": "#a4161a",
+          "accent_soft": "#f6dcdc",
+          "info": "#a4161a",
+          "info_bg": "#fbeaea"
+        },
+        "dark": {
+          "accent": "#ff8a8a",
+          "accent_soft": "#4a2222",
+          "info": "#ffb3b3",
+          "info_bg": "#3a1d1d"
+        }
+      }
+    },
+    "window": {
+      "width": 1280,
+      "height": 860
+    },
+    "base_font_pt": 0,
+    "density": "comfortable"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "generated_by": "example nomination script output (replace with your script's real output)",
+  "terms": [
+    {
+      "term_id": "t-project-cedar",
+      "literal": "PROJECT_CEDAR",
+      "provenance": "Case DEMO-42 intake form, field 'project'",
+      "client_id": "CL-100482"
+    },
+    {
+      "term_id": "t-supplier-north",
+      "literal": "SUPPLIER_NORTH",
+      "provenance": "Case DEMO-42 intake form, field 'counterparty'",
+      "client_id": "CL-207715"
+    },
+    {
+      "term_id": "t-north-supply",
+      "literal": "NORTH_SUPPLY_CO",
+      "provenance": "Known alias of SUPPLIER_NORTH (vendor master)",
+      "client_id": "CL-207715"
+    },
+    {
+      "term_id": "t-test-data",
+      "literal": "TEST_DATA",
+      "provenance": "Standard exclusion for test records"
+    }
+  ]
+}

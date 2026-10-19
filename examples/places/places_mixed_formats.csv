@@ -1,0 +1,10 @@
+name;location;buffer;iso;justification;(format)
+New York office;40.712776, -74.005974;100m;US;Kickoff meeting held at the client's New York office;decimal
+Boston steering committee;19TCG3044991810;250m;US;Steering committee venue;mgrs
+London desk;"51°30'26.46""N 0°07'39.93""W";100m;GB;Budget memo drafted at the London desk;dms
+Istanbul office;35T 666371 4541552;100m;TR;Client's registered office in Türkiye;utm
+Ankara branch;395600.24N0325134.92E;500m;TR;Regional branch handling deliveries;compact
+Kabul compound;34.5553, 69.2075;200m;AF;Field site named in the purpose;decimal
+Berlin supplier;33UUU9177920072;100m;DE;Supplier HQ (Germany is excluded by default: approval should be refused);mgrs
+Thessaloniki port (mislabelled);"40°38'24.36""N 22°56'39.84""E";300m;TR;Labelled Türkiye but in Greece: the border check should refuse it;dms
+Offshore platform;34.0, 30.0;1.0 km;TR;At sea: not inside any country;decimal

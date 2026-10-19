@@ -1,0 +1,38 @@
+{
+  "default_field": "content",
+  "allowed_fields": ["content", "title"],
+  "date_field": "timestamp",
+  "country_field": "country",
+  "templates": [
+    {
+      "template_id": "single-term",
+      "name": "Single term",
+      "description": "Records containing one approved term.",
+      "skeleton": "{term}"
+    },
+    {
+      "template_id": "all-of-two",
+      "name": "Both terms",
+      "description": "Records containing both approved terms.",
+      "skeleton": "{a} AND {b}"
+    },
+    {
+      "template_id": "any-of-two",
+      "name": "Either term",
+      "description": "Records containing at least one of two approved terms.",
+      "skeleton": "{a} OR {b}"
+    },
+    {
+      "template_id": "required-plus-alternatives",
+      "name": "Required term plus one of two alternatives",
+      "description": "Records containing the required term and at least one of the alternatives.",
+      "skeleton": "{required} AND ({alt_a} OR {alt_b})"
+    },
+    {
+      "template_id": "term-excluding",
+      "name": "Term excluding another",
+      "description": "Records containing the first term but not the second.",
+      "skeleton": "{required} AND NOT {excluded}"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+Site Name,Latitude,Longitude,Radius (m),Country,Notes
+Istanbul office,41.0082,28.9784,100,TR,Registered office
+Ankara branch,39.9334,32.8597,250,tr,Branch
+Bad row,abc,28.9,100,TR,x

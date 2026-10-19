@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lucid-warrant"
+version = "0.1.0"
+description = "Human-signed approval of agent-generated Lucene searches"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["cryptography>=42", "sv-ttk==2.6.1", "darkdetect>=0.8", "tkinterdnd2>=0.4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+lucid-warrant = "lucid_warrant.cli:main"
+lucid-warrant-gui = "lucid_warrant.gui:main"
+
+[tool.setuptools]
+packages = ["lucid_warrant", "lucid_warrant.ui"]
+
+[tool.setuptools.package-data]
+lucid_warrant = ["seed/*.json", "agent_files/*.md", "geo_data/*.json.gz", "geo_data/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["gui: drives the real Tk GUI; each test runs in its own process"]

@@ -1,0 +1,13 @@
+{
+  "note": "Fictional records for practice. Tags are mock visibility attributes. Country is an ISO 3166-1 code.",
+  "records": [
+    {"record_id": "rec-001", "timestamp": "2026-09-15T14:02:00Z", "country": "US", "tags": ["ATTR_1000"], "title": "Kickoff notes", "content": "PROJECT_CEDAR kickoff with SUPPLIER_NORTH; delivery schedule agreed."},
+    {"record_id": "rec-002", "timestamp": "2026-06-02T09:30:00Z", "country": "DE", "tags": ["ATTR_1200"], "title": "Invoice review", "content": "Invoice from SUPPLIER_NORTH referencing PROJECT_CEDAR phase two."},
+    {"record_id": "rec-003", "timestamp": "2025-11-20T16:45:00Z", "country": "GB", "tags": ["ATTR_1230"], "title": "Restricted memo", "content": "PROJECT_CEDAR budget memo mentioning SUPPLIER_NORTH pricing."},
+    {"record_id": "rec-004", "timestamp": "2025-08-10T11:00:00Z", "country": "FR", "tags": ["ATTR_1000"], "title": "Alternate vendor", "content": "PROJECT_CEDAR evaluated NORTH_SUPPLY_CO as a backup vendor."},
+    {"record_id": "rec-005", "timestamp": "2026-10-01T08:15:00Z", "country": "US", "tags": ["ATTR_1000"], "title": "Test record", "content": "TEST_DATA entry for PROJECT_CEDAR; ignore."},
+    {"record_id": "rec-006", "timestamp": "2024-12-05T13:20:00Z", "country": "IT", "tags": ["ATTR_1200"], "title": "Unrelated", "content": "PROJECT_BIRCH status update; no supplier changes."},
+    {"record_id": "rec-007", "timestamp": "2026-03-14T10:05:00Z", "country": "CA", "tags": ["ATTR_1234"], "title": "Audit finding", "content": "SUPPLIER_NORTH audit finding, scope limited."},
+    {"record_id": "rec-008", "timestamp": "2025-02-27T15:40:00Z", "country": "US", "tags": ["ATTR_1000", "ATTR_1200"], "title": "Steering committee", "content": "Steering committee: PROJECT_CEDAR risks, SUPPLIER_NORTH and NORTH_SUPPLY_CO both discussed."}
+  ]
+}

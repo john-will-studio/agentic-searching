@@ -1,0 +1,11 @@
+Site Name,Latitude,Longitude,Radius (m),Country,Notes
+New York office,40.712776,-74.005974,100,US,Kickoff meeting held at the client's New York office
+Boston steering committee,42.360082,-71.05888,250,US,Steering committee venue
+London desk,51.507351,-0.127758,100,GB,Budget memo drafted at the London desk
+Istanbul office,41.0082,28.9784,100,TR,Client's registered office in Türkiye
+Ankara branch,39.9334,32.8597,500,TR,Regional branch handling deliveries
+Kabul compound,34.5553,69.2075,200,AF,Field site named in the purpose
+Berlin supplier,52.52,13.405,100,DE,Supplier HQ (Germany is excluded by default: approval should be refused)
+Thessaloniki port (mislabelled),40.6401,22.9444,300,TR,Labelled Türkiye but in Greece: the border check should refuse it
+Offshore platform,34.0,30.0,1000,TR,At sea: not inside any country
+Unreadable row,forty-one,28.97,100,TR,Should be reported by line number

@@ -1,0 +1,17 @@
+{
+  "_comment": "Mock RBAC for practice. The real service replaces MockRbacProvider in lucid_warrant/rbac.py. Optional: add \"parameter_2_by_parameter_1\": {\"0001\": [\"ATTR_1000\"]} to restrict which attributes go with each parameter 1; without it every combination is allowed.",
+  "subject_id": "user-demo",
+  "entitlement_version": "mock-rbac-v1",
+  "parameter_1": [
+    {"value": "0001", "label": "Search authorization 0001"},
+    {"value": "0012", "label": "Search authorization 0012"},
+    {"value": "0123", "label": "Search authorization 0123"},
+    {"value": "1234", "label": "Search authorization 1234"}
+  ],
+  "parameter_2": [
+    {"value": "ATTR_1000", "label": "Visibility attribute 1000"},
+    {"value": "ATTR_1200", "label": "Visibility attribute 1200"},
+    {"value": "ATTR_1230", "label": "Visibility attribute 1230"},
+    {"value": "ATTR_1234", "label": "Visibility attribute 1234"}
+  ]
+}

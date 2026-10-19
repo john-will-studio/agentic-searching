@@ -1,0 +1,100 @@
+{
+  "note": "Practice records for the mock search service. days_ago and time are turned into a timestamp when the records are loaded, so the data stays inside a recent search window. Not the real index.",
+  "records": [
+    {
+      "record_id": "rec-001",
+      "country": "US",
+      "tags": [
+        "ATTR_1000"
+      ],
+      "title": "Kickoff notes",
+      "content": "PROJECT_CEDAR kickoff with SUPPLIER_NORTH; delivery schedule agreed.",
+      "days_ago": 20,
+      "time": "14:02",
+      "lat": 40.712776,
+      "lon": -74.005974
+    },
+    {
+      "record_id": "rec-002",
+      "country": "DE",
+      "tags": [
+        "ATTR_1200"
+      ],
+      "title": "Invoice review",
+      "content": "Invoice from SUPPLIER_NORTH referencing PROJECT_CEDAR phase two.",
+      "days_ago": 18,
+      "time": "09:30"
+    },
+    {
+      "record_id": "rec-003",
+      "country": "GB",
+      "tags": [
+        "ATTR_1230"
+      ],
+      "title": "Restricted memo",
+      "content": "PROJECT_CEDAR budget memo mentioning SUPPLIER_NORTH pricing.",
+      "days_ago": 12,
+      "time": "16:45",
+      "lat": 51.507351,
+      "lon": -0.127758
+    },
+    {
+      "record_id": "rec-004",
+      "country": "FR",
+      "tags": [
+        "ATTR_1000"
+      ],
+      "title": "Alternate vendor",
+      "content": "PROJECT_CEDAR evaluated NORTH_SUPPLY_CO as a backup vendor.",
+      "days_ago": 25,
+      "time": "11:00"
+    },
+    {
+      "record_id": "rec-005",
+      "country": "US",
+      "tags": [
+        "ATTR_1000"
+      ],
+      "title": "Test record",
+      "content": "TEST_DATA entry for PROJECT_CEDAR; ignore.",
+      "days_ago": 16,
+      "time": "08:15"
+    },
+    {
+      "record_id": "rec-006",
+      "country": "IT",
+      "tags": [
+        "ATTR_1200"
+      ],
+      "title": "Unrelated",
+      "content": "PROJECT_BIRCH status update; no supplier changes.",
+      "days_ago": 3,
+      "time": "13:20"
+    },
+    {
+      "record_id": "rec-007",
+      "country": "CA",
+      "tags": [
+        "ATTR_1234"
+      ],
+      "title": "Audit finding",
+      "content": "SUPPLIER_NORTH audit finding, scope limited.",
+      "days_ago": 45,
+      "time": "10:05"
+    },
+    {
+      "record_id": "rec-008",
+      "country": "US",
+      "tags": [
+        "ATTR_1000",
+        "ATTR_1200"
+      ],
+      "title": "Steering committee",
+      "content": "Steering committee: PROJECT_CEDAR risks, SUPPLIER_NORTH and NORTH_SUPPLY_CO both discussed.",
+      "days_ago": 6,
+      "time": "15:40",
+      "lat": 42.360082,
+      "lon": -71.05888
+    }
+  ]
+}

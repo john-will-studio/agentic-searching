@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Runtime data: warrants, approvals, inbox, audit log. Never commit.
+data/
+
+# Keys live in ~/.lucid-warrant by default; this is a backstop.
+*.pem
+*.pub
+*.enc.json
+
+# macOS Finder metadata
+.DS_Store
+
+# Warrant directories created for testing inside the project folder (keys and records stay local)
+lucid-warrant-test/
+*Warrant Workspace/
+
+# Local leftovers from earlier practice runs and agent tooling; never commit.
+scenarios/
+.claude/

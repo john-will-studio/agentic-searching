@@ -1,0 +1,8 @@
+{"type": "FeatureCollection", "features": [
+  {"type": "Feature", "geometry": {"type": "Point", "coordinates": [28.9784, 41.0082]},
+   "properties": {"name": "Istanbul office", "radius_m": 150, "iso_a2": "TR", "description": "Registered office"}},
+  {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[0, 0], [1, 0], [1, 1], [0, 0]]]},
+   "properties": {"name": "An area"}},
+  {"type": "Feature", "geometry": {"type": "MultiPoint", "coordinates": [[32.8597, 39.9334], [27.1428, 38.4237]]},
+   "properties": {"name": "Branches"}}
+]}

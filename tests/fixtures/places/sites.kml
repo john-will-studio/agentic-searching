@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+  <Placemark><name>Istanbul office</name><description>Registered office</description>
+    <ExtendedData><Data name="radius_km"><value>0.3</value></Data><Data name="country"><value>TR</value></Data></ExtendedData>
+    <Point><coordinates>28.9784,41.0082,0</coordinates></Point></Placemark>
+  <Placemark><name>Route</name><LineString><coordinates>0,0 1,1</coordinates></LineString></Placemark>
+</Document></kml>

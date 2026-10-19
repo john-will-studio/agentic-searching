@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Lucid Warrant sample places</name>
+    <Placemark><name>New York office</name><description>Kickoff meeting held at the client's New York office</description>
+      <ExtendedData><Data name="radius_km"><value>0.1</value></Data><Data name="country"><value>US</value></Data></ExtendedData>
+      <Point><coordinates>-74.005974,40.712776,0</coordinates></Point></Placemark>
+    <Placemark><name>Boston steering committee</name><description>Steering committee venue</description>
+      <ExtendedData><Data name="radius_km"><value>0.25</value></Data><Data name="country"><value>US</value></Data></ExtendedData>
+      <Point><coordinates>-71.05888,42.360082,0</coordinates></Point></Placemark>
+    <Placemark><name>London desk</name><description>Budget memo drafted at the London desk</description>
+      <ExtendedData><Data name="radius_km"><value>0.1</value></Data><Data name="country"><value>GB</value></Data></ExtendedData>
+      <Point><coordinates>-0.127758,51.507351,0</coordinates></Point></Placemark>
+    <Placemark><name>Istanbul office</name><description>Client's registered office in Türkiye</description>
+      <ExtendedData><Data name="radius_km"><value>0.1</value></Data><Data name="country"><value>TR</value></Data></ExtendedData>
+      <Point><coordinates>28.9784,41.0082,0</coordinates></Point></Placemark>
+    <Placemark><name>Ankara branch</name><description>Regional branch handling deliveries</description>
+      <ExtendedData><Data name="radius_km"><value>0.5</value></Data><Data name="country"><value>TR</value></Data></ExtendedData>
+      <Point><coordinates>32.8597,39.9334,0</coordinates></Point></Placemark>
+    <Placemark><name>Kabul compound</name><description>Field site named in the purpose</description>
+      <ExtendedData><Data name="radius_km"><value>0.2</value></Data><Data name="country"><value>AF</value></Data></ExtendedData>
+      <Point><coordinates>69.2075,34.5553,0</coordinates></Point></Placemark>
+    <Placemark><name>Berlin supplier</name><description>Supplier HQ (Germany is excluded by default: approval should be refused)</description>
+      <ExtendedData><Data name="radius_km"><value>0.1</value></Data><Data name="country"><value>DE</value></Data></ExtendedData>
+      <Point><coordinates>13.405,52.52,0</coordinates></Point></Placemark>
+    <Placemark><name>Thessaloniki port (mislabelled)</name><description>Labelled Türkiye but in Greece: the border check should refuse it</description>
+      <ExtendedData><Data name="radius_km"><value>0.3</value></Data><Data name="country"><value>TR</value></Data></ExtendedData>
+      <Point><coordinates>22.9444,40.6401,0</coordinates></Point></Placemark>
+    <Placemark><name>Offshore platform</name><description>At sea: not inside any country</description>
+      <ExtendedData><Data name="radius_km"><value>1.0</value></Data><Data name="country"><value>TR</value></Data></ExtendedData>
+      <Point><coordinates>30.0,34.0,0</coordinates></Point></Placemark>
+    <Placemark><name>Delivery route (a line: skipped)</name><LineString><coordinates>28.97,41.0 32.86,39.93</coordinates></LineString></Placemark>
+</Document></kml>
